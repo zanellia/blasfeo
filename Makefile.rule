@@ -58,7 +58,7 @@ MACRO_LEVEL = 0
 PREFIX = /opt
 
 # C Compiler
-CC = gcc
+#CC = gcc
 #CC = clang-3.8
 
 # Common optimization/debugging flags
@@ -76,7 +76,7 @@ ifeq ($(LA), BLAS)
 LA_FLAGS = -DLA_BLAS
 endif
 
-ASFLAGS = 
+ASFLAGS =
 ifeq ($(MACRO_LEVEL), 1)
 ASFLAGS += -DMACRO_LEVEL=1
 endif
@@ -100,7 +100,7 @@ REF_BLAS = OPENBLAS
 #REF_BLAS = NETLIB
 #REF_BLAS = MKL
 ifeq ($(REF_BLAS), 0)
-REF_BLAS_FLAGS = 
+REF_BLAS_FLAGS =
 endif
 ifeq ($(REF_BLAS), OPENBLAS)
 REF_BLAS_FLAGS = -DREF_BLAS_OPENBLAS -I/opt/openblas/include
@@ -132,5 +132,3 @@ endif
 ifeq ($(TARGET), GENERIC)
 CFLAGS = $(COMMON_FLAGS) -march=native -DTARGET_GENERIC $(LA_FLAGS) $(OS_FLAGS) $(REF_BLAS_FLAGS) $(DEBUG)
 endif
-
-
