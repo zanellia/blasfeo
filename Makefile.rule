@@ -55,7 +55,7 @@ endif
 MACRO_LEVEL = 0
 
 # Installation directory
-PREFIX = /opt
+PREFIX = /usr
 
 # C Compiler
 #CC = gcc
@@ -130,5 +130,5 @@ ifeq ($(TARGET), X64_AMD_BULLDOZER)
 CFLAGS = $(COMMON_FLAGS) -m64 -mavx -mfma -DTARGET_X64_AMD_BULLDOZER $(LA_FLAGS) $(OS_FLAGS) $(REF_BLAS_FLAGS) $(DEBUG)
 endif
 ifeq ($(TARGET), GENERIC)
-CFLAGS = $(COMMON_FLAGS) -DTARGET_GENERIC $(LA_FLAGS) $(OS_FLAGS) $(REF_BLAS_FLAGS) $(DEBUG)
+CFLAGS = $(COMMON_FLAGS) -march=native -DTARGET_GENERIC $(LA_FLAGS) $(OS_FLAGS) $(REF_BLAS_FLAGS) $(DEBUG)
 endif

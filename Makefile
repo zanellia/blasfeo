@@ -28,14 +28,14 @@
 
 include ./Makefile.rule
 
-OBJS = 
+OBJS =
 
 ifeq ($(LA), HIGH_PERFORMANCE)
 
 ifeq ($(TARGET), X64_INTEL_HASWELL)
 # aux
 OBJS += ./auxiliary/d_aux_lib4.o ./auxiliary/avx/kernel_dgecp_lib4.o ./auxiliary/avx2/kernel_dgetr_lib4.o
-OBJS += 
+OBJS +=
 # kernels
 OBJS += ./kernel/avx2/kernel_dgemm_12x4_lib4.o ./kernel/avx2/kernel_dgemm_8x4_lib4.o ./kernel/avx2/kernel_dgemm_4x4_lib4.o ./kernel/avx/kernel_dgemm_diag_lib4.o ./kernel/avx2/kernel_dgemv_8_lib4.o ./kernel/avx/kernel_dgemv_4_lib4.o ./kernel/avx2/kernel_dsymv_6_lib4.o ./kernel/c99/kernel_dsymv_4_lib4.o ./kernel/avx2/kernel_dgetrf_pivot_4_lib4.o
 OBJS +=
@@ -46,8 +46,8 @@ endif
 
 ifeq ($(TARGET), X64_INTEL_SANDY_BRIDGE)
 # aux
-OBJS += ./auxiliary/d_aux_lib4.o ./auxiliary/avx/kernel_dgecp_lib4.o ./auxiliary/avx/kernel_dgetr_lib4.o 
-OBJS += 
+OBJS += ./auxiliary/d_aux_lib4.o ./auxiliary/avx/kernel_dgecp_lib4.o ./auxiliary/avx/kernel_dgetr_lib4.o
+OBJS +=
 # kernels
 OBJS += ./kernel/avx/kernel_dgemm_8x4_lib4.o ./kernel/avx/kernel_dgemm_4x4_lib4.o ./kernel/avx/kernel_dgemm_diag_lib4.o ./kernel/avx/kernel_dgemv_12_lib4.o ./kernel/avx/kernel_dgemv_8_lib4.o ./kernel/avx/kernel_dgemv_4_lib4.o ./kernel/avx/kernel_dsymv_6_lib4.o ./kernel/c99/kernel_dsymv_4_lib4.o ./kernel/avx/kernel_dgetrf_pivot_4_lib4.o
 OBJS +=
@@ -58,8 +58,8 @@ endif
 
 ifeq ($(TARGET), X64_INTEL_CORE)
 # aux
-OBJS += ./auxiliary/d_aux_lib4.o ./auxiliary/c99/kernel_dgecp_lib4.o ./auxiliary/c99/kernel_dgetr_lib4.o 
-OBJS += 
+OBJS += ./auxiliary/d_aux_lib4.o ./auxiliary/c99/kernel_dgecp_lib4.o ./auxiliary/c99/kernel_dgetr_lib4.o
+OBJS +=
 # kernels
 OBJS += ./kernel/sse3/kernel_dgemm_4x4_lib4.o ./kernel/c99/kernel_dgemm_4x4_lib4.o ./kernel/c99/kernel_dgemm_diag_lib4.o ./kernel/c99/kernel_dgemv_4_lib4.o ./kernel/c99/kernel_dsymv_4_lib4.o ./kernel/c99/kernel_dgetrf_pivot_4_lib4.o
 OBJS +=
@@ -70,8 +70,8 @@ endif
 
 ifeq ($(TARGET), X64_AMD_BULLDOZER)
 # aux
-OBJS += ./auxiliary/d_aux_lib4.o ./auxiliary/c99/kernel_dgecp_lib4.o ./auxiliary/c99/kernel_dgetr_lib4.o 
-OBJS += 
+OBJS += ./auxiliary/d_aux_lib4.o ./auxiliary/c99/kernel_dgecp_lib4.o ./auxiliary/c99/kernel_dgetr_lib4.o
+OBJS +=
 # kernels
 OBJS += ./kernel/fma/kernel_dgemm_4x4_lib4.o ./kernel/c99/kernel_dgemm_4x4_lib4.o ./kernel/c99/kernel_dgemm_diag_lib4.o ./kernel/c99/kernel_dgemv_4_lib4.o ./kernel/c99/kernel_dsymv_4_lib4.o ./kernel/c99/kernel_dgetrf_pivot_4_lib4.o
 OBJS +=
@@ -82,8 +82,8 @@ endif
 
 ifeq ($(TARGET), GENERIC)
 # aux
-OBJS += ./auxiliary/d_aux_lib4.o ./auxiliary/c99/kernel_dgecp_lib4.o ./auxiliary/c99/kernel_dgetr_lib4.o 
-OBJS += 
+OBJS += ./auxiliary/d_aux_lib4.o ./auxiliary/c99/kernel_dgecp_lib4.o ./auxiliary/c99/kernel_dgetr_lib4.o
+OBJS +=
 # kernels
 OBJS += ./kernel/c99/kernel_dgemm_4x4_lib4.o ./kernel/c99/kernel_dgemm_diag_lib4.o ./kernel/c99/kernel_dgemv_4_lib4.o ./kernel/c99/kernel_dsymv_4_lib4.o ./kernel/c99/kernel_dgetrf_pivot_4_lib4.o
 OBJS +=
@@ -96,7 +96,7 @@ else # LA_REFERENCE | LA_BLAS
 
 # aux
 OBJS += ./auxiliary/d_aux_lib.o
-OBJS += 
+OBJS +=
 # blas
 OBJS += ./blas/d_blas1_lib.o ./blas/d_blas2_lib.o ./blas/d_blas3_lib.o ./blas/d_blas3_diag_lib.o ./blas/d_lapack_lib.o
 OBJS +=
@@ -116,7 +116,7 @@ OBJS += ./kernel/c99/kernel_sgemm_4x4_lib4.o ./kernel/c99/kernel_sgemv_4_lib4.o
 OBJS +=
 OBJS += ./blas/s_blas2_lib4.o ./blas/s_blas3_lib4.o ./blas/s_lapack_lib4.o
 # auxiliary
-OBJS += ./auxiliary/s_aux_lib4.o ./auxiliary/s_aux_extern_depend_lib4.o 
+OBJS += ./auxiliary/s_aux_lib4.o ./auxiliary/s_aux_extern_depend_lib4.o
 endif
 
 ifeq ($(TARGET), X64_INTEL_SANDY_BRIDGE)
@@ -124,10 +124,10 @@ ifeq ($(TARGET), X64_INTEL_SANDY_BRIDGE)
 OBJS +=
 OBJS += ./kernel/c99/kernel_sgemm_4x4_lib4.o ./kernel/c99/kernel_sgemv_4_lib4.o
 # blas
-OBJS += 
+OBJS +=
 OBJS += ./blas/s_blas2_lib4.o ./blas/s_blas3_lib4.o ./blas/s_lapack_lib4.o
 # auxiliary
-OBJS += ./auxiliary/s_aux_lib4.o ./auxiliary/s_aux_extern_depend_lib4.o 
+OBJS += ./auxiliary/s_aux_lib4.o ./auxiliary/s_aux_extern_depend_lib4.o
 endif
 
 ifeq ($(TARGET), X64_INTEL_CORE)
@@ -138,7 +138,7 @@ OBJS += ./kernel/c99/kernel_sgemm_4x4_lib4.o ./kernel/c99/kernel_sgemv_4_lib4.o
 OBJS +=
 OBJS += ./blas/s_blas2_lib4.o ./blas/s_blas3_lib4.o ./blas/s_lapack_lib4.o
 # auxiliary
-OBJS += ./auxiliary/s_aux_lib4.o ./auxiliary/s_aux_extern_depend_lib4.o 
+OBJS += ./auxiliary/s_aux_lib4.o ./auxiliary/s_aux_extern_depend_lib4.o
 endif
 
 ifeq ($(TARGET), X64_AMD_BULLDOZER)
@@ -149,7 +149,7 @@ OBJS += ./kernel/c99/kernel_sgemm_4x4_lib4.o ./kernel/c99/kernel_sgemv_4_lib4.o
 OBJS +=
 OBJS += ./blas/s_blas2_lib4.o ./blas/s_blas3_lib4.o ./blas/s_lapack_lib4.o
 # auxiliary
-OBJS += ./auxiliary/s_aux_lib4.o ./auxiliary/s_aux_extern_depend_lib4.o 
+OBJS += ./auxiliary/s_aux_lib4.o ./auxiliary/s_aux_extern_depend_lib4.o
 endif
 
 ifeq ($(TARGET), GENERIC)
@@ -160,7 +160,7 @@ OBJS += ./kernel/c99/kernel_sgemm_4x4_lib4.o ./kernel/c99/kernel_sgemv_4_lib4.o
 OBJS +=
 OBJS += ./blas/s_blas2_lib4.o ./blas/s_blas3_lib4.o ./blas/s_lapack_lib4.o
 # auxiliary
-OBJS += ./auxiliary/s_aux_lib4.o ./auxiliary/s_aux_extern_depend_lib4.o 
+OBJS += ./auxiliary/s_aux_lib4.o ./auxiliary/s_aux_extern_depend_lib4.o
 endif
 
 all: clean static_library
@@ -169,7 +169,7 @@ static_library: target
 	( cd auxiliary; $(MAKE) obj)
 	( cd kernel; $(MAKE) obj)
 	( cd blas; $(MAKE) obj)
-	ar rcs libblasfeo.a $(OBJS) 
+	ar rcs libblasfeo.a $(OBJS)
 	@echo
 	@echo " libblasfeo.a static library build complete."
 	@echo
@@ -226,19 +226,11 @@ ifeq ($(LA), REFERENCE)
 	echo "#endif" >> ./include/blasfeo_target.h
 endif
 
-install_static:
-	mkdir -p $(PREFIX)/blasfeo
-	mkdir -p $(PREFIX)/blasfeo/lib
-	cp -f libblasfeo.a $(PREFIX)/blasfeo/lib/
-	mkdir -p $(PREFIX)/blasfeo/include
-	cp -f ./include/*.h $(PREFIX)/blasfeo/include/
+$(info $$PREFIX is [${PREFIX}])
 
-install_shared:
-	mkdir -p $(PREFIX)/blasfeo
-	mkdir -p $(PREFIX)/blasfeo/lib
-	cp -f libblasfeo.so $(PREFIX)/blasfeo/lib/
-	mkdir -p $(PREFIX)/blasfeo/include
-	cp -f ./include/*.h $(PREFIX)/blasfeo/include/
+install_static:
+	mkdir -p $(PREFIX)/lib
+	cp -f libblasfeo.a $(PREFIX)/lib/
 
 test_problem:
 	cp libblasfeo.a ./test_problems/libblasfeo.a
@@ -257,4 +249,3 @@ clean:
 	make -C blas clean
 	make -C test_problems clean
 	make -C examples clean
-
