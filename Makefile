@@ -232,6 +232,7 @@ install_static:
 	mkdir -p $(PREFIX)/lib
 	cp -f libblasfeo.a $(PREFIX)/lib/
 
+
 test_problem:
 	cp libblasfeo.a ./test_problems/libblasfeo.a
 	make -C test_problems obj
