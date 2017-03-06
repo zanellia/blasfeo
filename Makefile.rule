@@ -62,7 +62,7 @@ PREFIX = /usr
 #CC = clang-3.8
 
 # Common optimization/debugging flags
-COMMON_FLAGS = -O2 -fPIC
+COMMON_FLAGS = -g -fPIC
 DEBUG = #-g #-Wall -pedantic -Wfloat-equal #-pg
 LDFLAGS =
 
