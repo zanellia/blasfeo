@@ -178,7 +178,7 @@ shared_library: target
 	( cd auxiliary; $(MAKE) obj)
 	( cd kernel; $(MAKE) obj)
 	( cd blas; $(MAKE) obj)
-	gcc -shared -o libblasfeo.so $(OBJS)
+	$(CC) -shared -o libblasfeo.so $(OBJS)
 	@echo
 	@echo " libblasfeo.so shared library build complete."
 	@echo
