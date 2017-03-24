@@ -232,6 +232,10 @@ install_static:
 	mkdir -p $(PREFIX)/lib
 	cp -f libblasfeo.a $(PREFIX)/lib/
 
+install:
+	install -m 0755 libblasfeo.so $(PREFIX)/lib
+
+.PHONY: install
 
 test_problem:
 	cp libblasfeo.a ./test_problems/libblasfeo.a
