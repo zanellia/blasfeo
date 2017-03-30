@@ -1,0 +1,7 @@
+#ifndef LA_HIGH_PERFORMANCE
+#define LA_HIGH_PERFORMANCE
+#endif
+
+#ifndef TARGET_GENERIC
+#define TARGET_GENERIC
+#endif
