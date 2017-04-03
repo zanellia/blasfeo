@@ -36,13 +36,18 @@ file(GLOB BLASFEO_BLAS_SRC
 	${PROJECT_SOURCE_DIR}/blas/s_lapack_lib4.c
 	)
 
+file(GLOB BLASFEO_LA_CHOICE_SRC
+	${PROJECT_SOURCE_DIR}/auxiliary/d_aux_extern_depend_lib.c
+	${PROJECT_SOURCE_DIR}/auxiliary/i_aux_extern_depend_lib.c )
+
 set(BLASFEO_SRC ${BLASFEO_AUXILIARY_C99_SRC} ${BLASFEO_KERNELS_SRC}
-	${BLASFEO_BLAS_SRC})
+	${BLASFEO_BLAS_SRC} ${BLASFEO_LA_CHOICE_SRC})
 
 # build variables
 set(MACRO_LEVEL 0)
 
-set(CMAKE_C_FLAGS "${CMAKE_FLAGS} -DLA_HIGH_PERFORMANCE	-DTARGET_GENERIC -DMACRO_LEVEL -DOS_LINUX")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -fPIC -lm -DLA_HIGH_PERFORMANCE	-DTARGET_GENERIC -DMACRO_LEVEL -DOS_LINUX")
 
 # add library
 add_library(blasfeo SHARED ${BLASFEO_SRC})
+target_link_libraries(blasfeo m)
