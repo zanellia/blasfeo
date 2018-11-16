@@ -123,8 +123,8 @@ TESTING_MODE = 0
 BENCHMARKS_MODE = 0
 # BENCHMARKS_MODE = 1
 
-SANDBOX_MODE = 0
-# SANDBOX_MODE = 1
+# SANDBOX_MODE = 0
+SANDBOX_MODE = 1
 
 # Enable on-line checks for matrix and vector dimensions
 #

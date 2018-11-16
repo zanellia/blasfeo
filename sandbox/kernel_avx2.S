@@ -168,7 +168,11 @@ kernel:
 	
 	PROLOGUE
 
-	// TODO
+    vmovsd 0(ARG1), %xmm0
+    vmovsd 0(ARG2), %xmm1
+    vaddsd %xmm0,   %xmm1, %xmm1
+
+    vmovsd %xmm1,   0(ARG3)
 
 	EPILOGUE
 	

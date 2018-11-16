@@ -41,7 +41,13 @@ int main()
 
 	printf("\nCalling kernel...\n");
 
-	kernel();
+    double a = 1.0;
+    double b = 2.0;
+    double c = 0.0;
+
+	kernel(&a, &b, &c);
+
+    printf("C = %f\n", c);
 
 	printf("\ndone!\n");
 	printf("\n");
