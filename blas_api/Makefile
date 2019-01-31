@@ -35,19 +35,19 @@ ifeq ($(BLAS_API), 1)
 
 ifeq ($(LA), HIGH_PERFORMANCE)
 
-OBJS += dcopy.o
+# OBJS += dcopy.o
 OBJS += dgemm.o
-OBJS += dsyrk.o
-OBJS += dtrmm.o
-OBJS += dtrsm.o
-OBJS += dlaswp.o
-OBJS += dgesv.o
-OBJS += dgetrf.o
-OBJS += dgetrs.o
-OBJS += dposv.o
-OBJS += dpotrf.o
-OBJS += dpotrs.o
-OBJS += dtrtrs.o
+# OBJS += dsyrk.o
+# OBJS += dtrmm.o
+# OBJS += dtrsm.o
+# OBJS += dlaswp.o
+# OBJS += dgesv.o
+# OBJS += dgetrf.o
+# OBJS += dgetrs.o
+# OBJS += dposv.o
+# OBJS += dpotrf.o
+# OBJS += dpotrs.o
+# OBJS += dtrtrs.o
 
 #endif # HIGH_PERFROMANCE
 

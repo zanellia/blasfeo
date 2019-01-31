@@ -46,7 +46,7 @@
 void blasfeo_dgemm(char *ta, char *tb, int *pm, int *pn, int *pk, double *alpha, double *A, int *plda, double *B, int *pldb, double *beta, double *C, int *pldc)
 	{
 
-//	printf("\nblasfeo_dgemm\n");
+	printf("\nblasfeo_dgemm(ta = %c, tb = %c, pm = %i, pn = %i, pk = %i, alpha = %f, lda = %i, ldb = %i, beta = %f, pldc = %i)", *ta, *tb, *pm, *pn, *pk, *alpha, *plda, *pldb, *beta, *pldc);
 
 	int m = *pm;
 	int n = *pn;

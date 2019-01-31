@@ -626,19 +626,19 @@ endif # GENERIC
 
 ifeq ($(BLAS_API), 1)
 OBJS += \
-		blas_api/dcopy.o \
 		blas_api/dgemm.o \
-		blas_api/dsyrk.o \
-		blas_api/dtrmm.o \
-		blas_api/dtrsm.o \
-		blas_api/dgesv.o \
-		blas_api/dgetrf.o \
-		blas_api/dgetrs.o \
-		blas_api/dlaswp.o \
-		blas_api/dposv.o \
-		blas_api/dpotrf.o \
-		blas_api/dpotrs.o \
-		blas_api/dtrtrs.o \
+		# blas_api/dcopy.o \
+		# blas_api/dsyrk.o \
+		# blas_api/dtrmm.o \
+		# blas_api/dtrsm.o \
+		# blas_api/dgesv.o \
+		# blas_api/dgetrf.o \
+		# blas_api/dgetrs.o \
+		# blas_api/dlaswp.o \
+		# blas_api/dposv.o \
+		# blas_api/dpotrf.o \
+		# blas_api/dpotrs.o \
+		# blas_api/dtrtrs.o \
 
 endif
 
