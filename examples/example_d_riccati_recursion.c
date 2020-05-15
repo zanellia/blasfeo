@@ -68,11 +68,11 @@ static void d_back_ric_sv_libstr(int N, int *nx, int *nu, struct blasfeo_dmat *h
 		{
 		blasfeo_dtrmm_rlnn(nu[N-nn-1]+nx[N-nn-1]+1, nx[N-nn], 1.0, &hsL[N-nn], nu[N-nn], nu[N-nn], &hsBAbt[N-nn-1], 0, 0, &hswork_mat[0], 0, 0);
 		blasfeo_dgead(1, nx[N-nn], 1.0, &hsL[N-nn], nu[N-nn]+nx[N-nn], nu[N-nn], &hswork_mat[0], nu[N-nn-1]+nx[N-nn-1], 0);
-#if 1
+#if 0
 		blasfeo_dsyrk_dpotrf_ln_mn(nu[N-nn-1]+nx[N-nn-1]+1, nu[N-nn-1]+nx[N-nn-1], nx[N-nn], &hswork_mat[0], 0, 0, &hswork_mat[0], 0, 0, &hsRSQrq[N-nn-1], 0, 0, &hsL[N-nn-1], 0, 0);
 #else
-		blasfeo_dsyrk_ln(nu[N-nn-1]+nx[N-nn-1]+1, nu[N-nn-1]+nx[N-nn-1], nx[N-nn], 1.0, &hswork_mat[0], 0, 0, &hswork_mat[0], 0, 0, 1.0, &hsRSQrq[N-nn-1], 0, 0, &hsL[N-nn-1], 0, 0);
-		blasfeo_dpotrf_l(nu[N-nn-1]+nx[N-nn-1]+1, nu[N-nn-1]+nx[N-nn-1], &hsL[N-nn-1], 0, 0, &hsL[N-nn-1], 0, 0);
+		blasfeo_dsyrk_ln(nu[N-nn-1]+nx[N-nn-1]+1, nx[N-nn], 1.0, &hswork_mat[0], 0, 0, &hswork_mat[0], 0, 0, 1.0, &hsRSQrq[N-nn-1], 0, 0, &hsL[N-nn-1], 0, 0);
+		blasfeo_dpotrf_l(nu[N-nn-1]+nx[N-nn-1]+1, &hsL[N-nn-1], 0, 0, &hsL[N-nn-1], 0, 0);
 #endif
 		}
 
@@ -124,13 +124,13 @@ static void d_back_ric_trf_libstr(int N, int *nx, int *nu, struct blasfeo_dmat *
 	for(nn=0; nn<N; nn++)
 		{
 		blasfeo_dtrmm_rlnn(nu[N-nn-1]+nx[N-nn-1], nx[N-nn], 1.0, &hsL[N-nn], nu[N-nn], nu[N-nn], &hsBAbt[N-nn-1], 0, 0, &hswork_mat[0], 0, 0);
-#if 1
+#if 0
 		blasfeo_dsyrk_dpotrf_ln_mn(nu[N-nn-1]+nx[N-nn-1], nu[N-nn-1]+nx[N-nn-1], nx[N-nn], &hswork_mat[0], 0, 0, &hswork_mat[0], 0, 0, &hsRSQrq[N-nn-1], 0, 0, &hsL[N-nn-1], 0, 0);
 #else
-		blasfeo_dsyrk_ln(nu[N-nn-1]+nx[N-nn-1], nu[N-nn-1]+nx[N-nn-1], nx[N-nn], 1.0, &hswork_mat[0], 0, 0, &hswork_mat[0], 0, 0, 1.0, &hsRSQrq[N-nn-1], 0, 0, &hsL[N-nn-1], 0, 0);
-		blasfeo_dpotrf_l(nu[N-nn-1]+nx[N-nn-1], nu[N-nn-1]+nx[N-nn-1], &hsL[N-nn-1], 0, 0, &hsL[N-nn-1], 0, 0);
+		blasfeo_dsyrk_ln(nu[N-nn-1]+nx[N-nn-1], nx[N-nn], 1.0, &hswork_mat[0], 0, 0, &hswork_mat[0], 0, 0, 1.0, &hsRSQrq[N-nn-1], 0, 0, &hsL[N-nn-1], 0, 0);
+		blasfeo_dpotrf_l(nu[N-nn-1]+nx[N-nn-1], &hsL[N-nn-1], 0, 0, &hsL[N-nn-1], 0, 0);
 #endif
-//		blasfeo_print_dmat(nu[N-nn-1]+nx[N-nn-1], nu[N-nn-1]+nx[N-nn-1], &hsL[N-nn-1], 0, 0);
+		blasfeo_print_dmat(nu[N-nn-1]+nx[N-nn-1], nu[N-nn-1]+nx[N-nn-1], &hsL[N-nn-1], 0, 0);
 		}
 
 	return;
@@ -525,9 +525,13 @@ int main()
 ************************************************/
 
 	// problem size
-	int N = 10;
-	int nx_ = 8;
-	int nu_ = 3;
+	int N = 5;
+	int nm = 2;
+	int nx_ = 2*nm;
+	int nu_ = nm;
+	// int N = 10;
+	// int nx_ = 8;
+	// int nu_ = 3;
 
 	// stage-wise variant size
 	int *nx = malloc((N+1)*sizeof(int));
